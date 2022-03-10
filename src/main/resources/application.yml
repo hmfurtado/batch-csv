@@ -5,3 +5,15 @@ spring:
     url: jdbc:postgresql://localhost:5432/imdb_tsv
     username: postgres
     password: postgres
+    initialization-mode: always #execute schema.sql on startup
+
+# Configuration to run Postgrest on docker :
+#  docker run -d -p 5432:5432
+#  -v postgres_default:/var/lib/postgresql/data
+#  -e POSTGRES_PASSWORD=postgres
+#  -e POSTGRES_USER=postgres
+#  --name imdb postgres
+# in PSQL create database imdb_tsv
+
+#Download this file, extract and put on /resources with data.tsv name
+# https://datasets.imdbws.com/title.basics.tsv.gz
