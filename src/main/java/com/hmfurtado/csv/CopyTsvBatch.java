@@ -41,7 +41,7 @@ public class CopyTsvBatch {
                 .delimited()
                 .quoteCharacter('\t')
                 .delimiter("\t")
-                .names(new String[]{"tconst", "titletype", "primarytitle", "originaltitle", "isadult", "startyear", "endyear", "runtimeminutes", "genres"})
+                .names(new String[]{"titleid", "ordering", "title", "region", "language", "types", "attributes", "isoriginaltitle"})
                 .fieldSetMapper(new BeanWrapperFieldSetMapper<TitleDTO>() {{
                     setTargetType(TitleDTO.class);
                 }})
@@ -52,10 +52,10 @@ public class CopyTsvBatch {
     public JdbcBatchItemWriter<TitleDTO> writer(DataSource dataSource) {
         return new JdbcBatchItemWriterBuilder<TitleDTO>()
                 .itemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>())
-                .sql("INSERT INTO title_db " +
-                        "(tconst, titletype, primarytitle, originaltitle, isadult, startyear, endyear, runtimeminutes, genres) " +
+                .sql("INSERT INTO title " +
+                        "(titleid, ordering, title, region, language, types, attributes, isoriginaltitle) " +
                         "VALUES " +
-                        "(:tconst, :titleType, :primaryTitle, :originalTitle, :isAdult, :startYear, :endYear, :runtimeMinutes, :genres)")
+                        "(:titleId, :ordering, :title, :region, :language, :types, :attributes, :isOriginalTitle)")
                 .dataSource(dataSource)
                 .build();
     }

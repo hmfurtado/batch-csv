@@ -5,7 +5,18 @@ spring:
     url: jdbc:postgresql://localhost:5432/imdb_tsv
     username: postgres
     password: postgres
-    initialization-mode: always #execute schema.sql on startup
+    initialization-mode: always
+  batch:
+    initialize-schema: always
+
+#spring:
+#  datasource:
+#    platform: org.hibernate.dialect.PostgreSQLDialect
+#    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://localhost:5432/imdb_tsv
+#    username: postgres
+#    password: postgres
+#    initialization-mode: always
 
 # Configuration to run Postgrest on docker :
 #  docker run -d -p 5432:5432
@@ -16,4 +27,4 @@ spring:
 # in PSQL create database imdb_tsv
 
 #Download this file, extract and put on /resources with data.tsv name
-# https://datasets.imdbws.com/title.basics.tsv.gz
+# https://datasets.imdbws.com/title.akas.tsv.gz

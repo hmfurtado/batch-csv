@@ -13,13 +13,12 @@ import lombok.Setter;
 @Setter
 public class TitleDTO {
 
-    private String tconst;
-    private String titleType;
-    private String primaryTitle;
-    private String originalTitle;
-    private String isAdult;
-    private String startYear;
-    private String endYear;
-    private String runtimeMinutes;
-    private String genres;
+    private String titleId;
+    private Integer ordering;
+    private String title;
+    private String region;
+    private String language;
+    private String types;
+    private String attributes;
+    private String isOriginalTitle;
 }
