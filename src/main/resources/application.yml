@@ -9,15 +9,6 @@ spring:
   batch:
     initialize-schema: always
 
-#spring:
-#  datasource:
-#    platform: org.hibernate.dialect.PostgreSQLDialect
-#    driver-class-name: org.postgresql.Driver
-#    url: jdbc:postgresql://localhost:5432/imdb_tsv
-#    username: postgres
-#    password: postgres
-#    initialization-mode: always
-
 # Configuration to run Postgrest on docker :
 #  docker run -d -p 5432:5432
 #  -v postgres_default:/var/lib/postgresql/data
