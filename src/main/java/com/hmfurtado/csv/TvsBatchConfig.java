@@ -23,7 +23,7 @@ import javax.sql.DataSource;
 @Slf4j
 @EnableBatchProcessing
 @Configuration
-public class CopyTsvBatch {
+public class TvsBatchConfig {
 
     @Autowired
     public JobBuilderFactory jobBuilderFactory;
